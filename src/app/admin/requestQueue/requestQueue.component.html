@@ -1,0 +1,139 @@
+<div class="spinner" *ngIf="dataGetState">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!dataGetState" class="container padding-all-1">
+  <h3 class="heading">Data Request List</h3>
+
+  <div class="search">
+    <form [formGroup]="searchselectForm">
+      <label class="searchhead">
+        <input
+          [(ngModel)]="searchSelectvalue"
+          type="radio"
+          name="searchSelect"
+          formControlName="searchSelect"
+          value="reqid"
+        />
+        By Req-ID
+      </label>
+      <label class="searchhead">
+        <input
+          [(ngModel)]="searchSelectvalue"
+          type="radio"
+          name="searchSelect"
+          formControlName="searchSelect"
+          value="name"
+        />
+        By Name
+      </label>
+    </form>
+
+    <form class="searchbar">
+      <input
+        placeholder="Search Table "
+        type="text"
+        [(ngModel)]="query"
+        id="listSearch"
+        name="search"
+      /><button
+        class="bt"
+        (click)="getbysearch(query)"
+        [disabled]="!searchselectForm.valid"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+    <!--(keyup)="getbyID(query)"-->
+    <div class="nomatch" *ngIf="noMatch">
+      <strong>No Match Found!!! </strong>
+      <button (click)="getentire()">Back</button>
+    </div>
+  </div>
+  <div class="nomatch" *ngIf="pageexiststate">
+    <strong>Page does not exist!!! </strong>
+    <button (click)="getentire()">Back</button>
+  </div>
+
+  <div *ngIf="!noMatch && !pageexiststate">
+    <table>
+      <thead>
+        <th class="content">Request ID</th>
+        <th class="content">First Name</th>
+        <th class="content">Last Name</th>
+        <th class="content">Email</th>
+        <th class="content">Phone No</th>
+        <th class="content">Request Type</th>
+        <th class="content">Expires In</th>
+        <th class="content">Status</th>
+      </thead>
+      <!--<tr
+      *ngFor="
+        let que of (queue
+          | filter: query
+          | paginate: { itemsPerPage: 5, currentPage: p });
+        let i = index
+      "
+      [ngSwitch]="que.status"
+    >-->
+      <tr *ngFor="let que of queue; let i = index" [ngSwitch]="que.status">
+        <td class="content">
+          <a
+            routerLink="/admin/view/{{ que.request_id }}"
+            routerLink="active"
+            >{{ que.request_id }}</a
+          >
+        </td>
+        <!--<td> <a routerLink="/admin/view/:{{que.request_id}}" routerLinkActive="active"  (click)="newMessage(que.request_id)">{{que.request_id}}</a></td>--->
+        <td class="content">{{ que.firstname }}</td>
+        <td class="content">{{ que.lastname }}</td>
+        <td class="content">{{ que.email }}</td>
+        <td>{{ que.phone_no }}</td>
+        <td class="content">{{ que.datareqlist }}</td>
+        <td class="content">{{ que.expiresIn }} days</td>
+        <td class="content">
+          <button class="btnstats new" [disabled]="true" *ngSwitchCase="1">
+            NEW
+          </button>
+          <button class="btnstats verify" [disabled]="true" *ngSwitchCase="2">
+            VERIFY
+          </button>
+          <button class="btnstats progress" [disabled]="true" *ngSwitchCase="3">
+            IN-PROGRESS
+          </button>
+          <button
+            class="btnstats completed"
+            [disabled]="true"
+            *ngSwitchCase="4"
+          >
+            COMPLETED
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <div class="pagination">
+      <button class="bt btn1" (click)="decrement()" [disabled]="!pagestateprev">
+        «
+      </button>
+      <button class="bt btn2">
+        {{ page }}
+      </button>
+      <button class="bt btn3" (click)="increment()" [disabled]="!pagestatenext">
+        »
+      </button>
+      <div class="setnewpage">
+        Page
+        <input
+          class="setpage"
+          [(ngModel)]="pagenew"
+          (keyup.enter)="getlistinfo(pagenew)"
+          name="pagenew"
+        /><strong>of {{ totalPages }}</strong>
+        <!--<button [disabled]="true">{{ totalPages }}</button>-->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 13rem;
+}
+
+.sidenav .mat-toolbar {
+  background: #76b852;
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #76b852;
+}
+.mat-nav-list a {
+  color: #76b852;
+}
+.mat-nav-list a.active {
+  background: #76b852;
+  color: white;
+}
+.fixed-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+.toggleButton {
+  position: absolute;
+  bottom: 1rem;
+  right: 3rem;
+  z-index: 3;
+}
+.toggleButton {
+  background-color: #76b852 !important;
+}

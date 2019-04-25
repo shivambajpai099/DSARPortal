@@ -1,0 +1,129 @@
+<section class="flex-column padding-all-1">
+  <script src="node_modules/chart.js/src/chart.js"></script>
+  <div class="spinner" *ngIf="dataGetState">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <!-- <div *ngIf="!dataGetState">
+    <button (click)="typegraph(graphbutton)">Go to {{ graphbutton }}</button>
+
+    <div class="pie" *ngIf="piegraphstatus && pieData.length > 0">
+      <canvas
+        baseChart
+        [data]="pieData"
+        [chartType]="pieChartType"
+        [labels]="pieChartLabels"
+        [options]="options"
+      ></canvas>
+    </div>
+  </div> -->
+
+  <mat-button-toggle-group
+    *ngIf="!dataGetState"
+    #group="matButtonToggleGroup"
+    [value]="graphbutton"
+    (change)="typegraph(graphbutton)"
+  >
+    <mat-button-toggle value="Pie Graph">
+      Pie Graph
+    </mat-button-toggle>
+    <mat-button-toggle value="Time Graph">
+      Time Graph
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <mat-card class="card" *ngIf="piegraphstatus && pieData.length > 0">
+    <mat-card-header>
+      <mat-card-title>{{ graphbutton }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas
+        style="height: 60vh;"
+        baseChart
+        [data]="pieData"
+        [chartType]="pieChartType"
+        [labels]="pieChartLabels"
+        [options]="options"
+      ></canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card" *ngIf="timegraphstatus && !dataGetState">
+    <mat-card-header>
+      <mat-card-title>Chart</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas baseChart id="canvas">{{ chart }}</canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card margin-top-1" *ngIf="!dataGetState && pagedatastatus">
+    <mat-card-header>
+      <mat-card-title>Data Request Statistics</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="charInfo">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="stage">
+            <th mat-header-cell *matHeaderCellDef>Stage</th>
+            <td mat-cell *matCellDef="let element">
+              <a [routerLink]="element.link">{{ element.stage }}</a>
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="noofrequests">
+            <th mat-header-cell *matHeaderCellDef>No of Requests</th>
+            <td mat-cell *matCellDef="let element">{{ element.value }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <a routerLink="/admin/logs" class="logButton"
+          ><button mat-raised-button color="primary">Logs</button></a
+        >
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <div class="timegraph" *ngIf="timegraphstatus && !dataGetState">
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div> -->
+  <!-- <div *ngIf="!dataGetState && pagedatastatus">
+    <div class="charInfo">
+      <h4 class="heading text-center ">Data Request Statistics</h4>
+      <table class="Info">
+        <tr>
+          <td>
+            <a routerLink="/admin/listbystatus/1">New</a>
+          </td>
+          <td>{{ pieData[0] }}</td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink="/admin/listbystatus/2">Verify</a>
+          </td>
+          <td>{{ pieData[1] }}</td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink="/admin/listbystatus/3">In-Progress</a>
+          </td>
+          <td>{{ pieData[2] }}</td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink="/admin/listbystatus/4">Completed</a>
+          </td>
+          <td>{{ pieData[3] }}</td>
+        </tr>
+      </table>
+
+      <a routerLink="/admin/logs" class="logButton"
+        ><button mat-raised-button color="primary">Logs</button></a
+      >
+    </div>
+  </div> -->
+</section>

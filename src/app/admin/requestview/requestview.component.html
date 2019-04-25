@@ -1,0 +1,90 @@
+<div class="spinner" *ngIf="dataGetState">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!dataGetState" class="flex-column padding-all-1">
+  <mat-accordion multi="true">
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Request Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <table mat-table [dataSource]="dataSource" class="width-100-percent">
+        <ng-container matColumnDef="stage">
+          <th mat-header-cell *matHeaderCellDef>Details</th>
+          <td mat-cell *matCellDef="let element">
+            <span> {{ element.stage }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="noofrequests">
+          <th mat-header-cell *matHeaderCellDef>User Info</th>
+          <td mat-cell *matCellDef="let element">
+            <span *ngIf="!element.url">{{ element.value }}</span>
+            <a *ngIf="element.url" [href]="element.value">{{
+              element.value
+            }}</a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      expanded="true"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Change Request Status
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="container2">
+        <mat-horizontal-stepper
+          #stepper
+          (selectionChange)="stepperChanged($event)"
+        >
+          <ng-container *ngFor="let status of statuses">
+            <mat-step editable="true" [completed]="status.completed">
+              <ng-template matStepLabel>
+                {{ status.label }}
+              </ng-template>
+            </mat-step>
+          </ng-container>
+
+          <ng-template matStepperIcon="edit">
+            <mat-icon>insert_drive_file</mat-icon>
+          </ng-template>
+        </mat-horizontal-stepper>
+      </div>
+
+      <div class="container3">
+        <textarea
+          class="textbox"
+          [(ngModel)]="msg"
+          name="msg"
+          placeholder=" Send message to {{ tempdata.firstname }} {{
+            tempdata.lastname
+          }}"
+        >
+        </textarea>
+
+        <div class="btn2">
+          <button
+            mat-raised-button
+            color="primary"
+            class="margin-right-1"
+            (click)="onClear()"
+          >
+            Clear
+          </button>
+          <button mat-raised-button color="primary" (click)="onSubmit(msg)">
+            Send
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

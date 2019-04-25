@@ -1,0 +1,139 @@
+.pie {
+  display: block;
+  height: 60%;
+  width: 60%;
+  margin: 5% 20% 3% 20%;
+}
+.timegraph {
+  display: block;
+  height: 60%;
+  width: 60%;
+  margin: 5% 20% 0% 20%;
+}
+.spinner {
+  margin-left: 40%;
+  margin-top: 20%;
+}
+/* .heading {
+  padding-top: 4rem;
+  font-size: 2rem;
+  margin-left: 33%;
+} */
+table {
+  border-collapse: separate;
+  background: #fff;
+  border-radius: 2rem;
+  /* margin: 5rem auto; */
+  width: 50%;
+}
+/* .Info {
+  margin-top: 2rem;
+  margin-left: 25%;
+} */
+thead {
+  border-radius: 2rem;
+}
+
+thead th {
+  font-family: "Patua One", cursive;
+  font-size: 18rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 1rem 1rem 0rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 25rem;
+  background-size: 100%;
+  border-top: 1rem solid #858d99;
+}
+thead th:first-child {
+  border-top-left-radius: 5rem;
+}
+thead th:last-child {
+  border-top-right-radius: 5rem;
+}
+
+tbody tr td {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #5f6062;
+  font-size: 1.3rem;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(2n) {
+  background: #f0f3f5;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1rem;
+}
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1rem;
+}
+
+.basicButton {
+  padding: 2rem;
+  margin: 2rem;
+  color: #76b852;
+  width: 15rem;
+  color: #fff !important;
+  text-transform: uppercase;
+  background: #76b852;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-left: 25rem;
+}
+
+.basicButton:hover {
+  background: #434343;
+  letter-spacing: 0.5rem;
+  transition: all 0.4s ease 0s;
+  border: none;
+  outline: none;
+}
+
+.charInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.logButton {
+  align-self: flex-end;
+  margin-right: 10rem;
+  margin-top: 1rem;
+}
+
+.logButton .mat-primary {
+  background-color: #76b852 !important;
+}
+
+canvas {
+  width: 100%;
+  height: 60vh;
+  max-width: 100%;
+  max-height: 60vh;
+}
+mat-button-toggle-group {
+  max-width: 12rem;
+  position: absolute;
+  top: 6rem;
+  left: 50rem;
+  float: right;
+  z-index: 1;
+}
+
+.mat-table {
+  box-shadow: none !important;
+  width: 100%;
+}

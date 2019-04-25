@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #3fb53f;
+  margin-left: 50%;
+  margin-top: 20%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex,
+.flex-column,
+.flex-row {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column wrap;
+}
+
+.flex-row {
+  flex-direction: row wrap;
+}
+
+.padding-all-1 {
+  padding: 1rem;
+}
+
+.margin-top-1 {
+  margin-top: 1rem;
+}
+
+.margin-right-1 {
+  margin-right: 1rem;
+}
+
+.mat-drawer-content {
+  height: 90vh !important;
+}
+
+.width-100-percent {
+  width: 100%;
+}
+
+.mat-button-toggle-checked button {
+  background: 0 !important;
+}
+
+.mat-button-toggle-button {
+  background: #76b852 !important;
+}

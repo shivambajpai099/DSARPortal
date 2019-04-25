@@ -1,0 +1,96 @@
+ .spinner {
+  margin-left: 40%;
+  margin-top: 20%;
+}
+
+.table {
+  width: 100%;
+}
+table,
+th,
+td {
+  padding: 0.7rem;
+  text-align: center;
+}
+
+th {
+  color: white;
+  background-color: #76b852;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.heading {
+  padding-bottom: 4rem;
+  font-size: 2rem;
+  margin-left: 33%;
+}
+.content {
+  text-align: center;
+}
+
+.btnstats {
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  height: 1.7rem;
+  align-content: center;
+  width: 100%;
+}
+.new {
+  background-color: #b87252;
+}
+.verify {
+  background-color: #584284;
+}
+.progress {
+  background-color: #bfde18;
+  padding-left: 25%;
+  text-align: center;
+  color: black;
+}
+.completed {
+  background-color: #175741;
+}
+.pagination {
+  margin-left: 40%;
+  height: 3rem;
+}
+.bt {
+  color: #ffffff;
+  background: #76b852;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+.bt[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.btn1 {
+  border-radius: 3rem 0rem 0rem 3rem;
+  width: 2rem;
+  border: hidden;
+  outline: none;
+}
+.btn2 {
+  width: 3rem;
+}
+.btn3 {
+  border-radius: 0rem 3rem 3rem 0rem;
+  width: 2rem;
+  border: hidden;
+  outline: none;
+}
+.setpage {
+  width: 1.5rem;
+}
+.setnewpage {
+  margin: 0.5rem 1.5rem 0rem 1rem;
+}

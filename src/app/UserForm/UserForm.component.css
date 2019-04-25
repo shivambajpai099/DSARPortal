@@ -1,0 +1,96 @@
+.entire {
+  width: 85%;
+}
+
+.spinner1 {
+  margin-left: 50%;
+  margin-top: 20%;
+}
+.error-secondary {
+  color: red;
+  font-size: 1rem;
+  padding-left: 0rem;
+}
+.error-primary {
+  color: red;
+  font-size: 1rem;
+  margin-left: 33%;
+}
+
+.User-header {
+  text-align: center;
+  width: 100%;
+  margin-left: 10%;
+}
+.container {
+  align-content: center;
+  margin-left: 35%;
+  padding: 1%;
+  width: 55%;
+}
+.btn {
+  margin: 2%;
+  margin-left: 43%;
+  color: #76b852;
+  width: 15rem;
+  color: #fff !important;
+  text-transform: uppercase;
+  background: #76b852;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #434343;
+  letter-spacing: 0.5rem;
+  transition: all 0.4s ease 0s;
+}
+
+.datatypecontainer {
+  width: 65%;
+}
+.icon {
+  color: darkgreen;
+  padding-right: 0.1rem;
+  padding-left: 0.1rem;
+}
+.choices {
+  width: 100%;
+}
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.progress {
+  width: 20%;
+}
+
+.uploadButton {
+  align-self: flex-end;
+  margin-left: 11rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: #76b852;
+}
+.submitdButton {
+  align-self: flex-end;
+  margin-left: 60%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  background-color: #76b852;
+}
+
+.fullform {
+  height: 100%;
+  overflow: auto;
+}
+button[disabled] {
+  border: 0.2rem solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

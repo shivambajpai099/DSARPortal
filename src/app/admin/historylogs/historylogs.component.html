@@ -1,0 +1,66 @@
+<div class="spinner" *ngIf="dataGetState">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!dataGetState" class="container">
+  <div class="heading">Log Activities</div>
+  <div class="nomatch" *ngIf="pageexiststate">
+    <strong>Page does not exist!!! </strong>
+  </div>
+  <div *ngIf="!pageexiststate">
+    <table class="table">
+      <tr>
+        <th class="content">SL.No</th>
+        <th class="content">Request Id</th>
+        <th class="content">Updated At</th>
+        <th class="content">Status</th>
+      </tr>
+
+      <tr *ngFor="let que of queue" [ngSwitch]="que.status">
+        <td class="content">{{ que.id }}</td>
+        <td class="content">{{ que.reqid }}</td>
+        <td class="content">{{ que.updatedAt }}</td>
+        <td class="content">
+          <button class="btnstats new" [disabled]="true" *ngSwitchCase="1">
+            NEW
+          </button>
+          <button class="btnstats verify" [disabled]="true" *ngSwitchCase="2">
+            VERIFY
+          </button>
+          <button class="btnstats progress" [disabled]="true" *ngSwitchCase="3">
+            IN-PROGRESS
+          </button>
+          <button
+            class="btnstats completed"
+            [disabled]="true"
+            *ngSwitchCase="4"
+          >
+            COMPLETED
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+    <div class="pagination">
+      <button class="bt btn1" (click)="decrement()" [disabled]="!pagestateprev">
+        «
+      </button>
+      <button class="bt btn2">
+        {{ page }}
+      </button>
+      <button class="bt btn3" (click)="increment()" [disabled]="!pagestatenext">
+        »
+      </button>
+      <div class="setnewpage">
+        Page
+        <input
+          class="setpage"
+          [(ngModel)]="pagenew"
+          (keyup.enter)="getRequestqueInfonew(pagenew)"
+          name="pagenew"
+        /><strong>of {{ totalPages }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

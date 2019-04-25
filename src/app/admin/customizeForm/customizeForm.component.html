@@ -1,0 +1,129 @@
+<div class="parent">
+  <div class=" Container1">
+    <div class="Container-mini">
+      <form [formGroup]="customizeForm">
+        <label class="example-container"
+          ><strong class="label">Label:</strong>
+          <mat-form-field>
+            <mat-select [(ngModel)]="selected" formControlName="styleLabel">
+              <mat-option *ngFor="let label of labels" value="{{ label }}">{{
+                label
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </label>
+      </form>
+    </div>
+    <div class="Container-mini">
+      <form [formGroup]="customizeForm">
+        <label class="example-container"
+          ><strong class="label">Color:</strong>
+          <input
+            [(colorPicker)]="tempColor"
+            formControlName="color"
+            class="form-control"
+            [(ngModel)]="tempColor"
+            placeholder="Set Color for {{ selected }}"
+            (click)="setColor()"
+          />
+        </label>
+        <div class="example-container" [ngStyle]="{ color: tempColor }">
+          Trial Color
+        </div>
+      </form>
+    </div>
+    <div class="Container-mini">
+      <form [formGroup]="customizeForm">
+        <label class="example-container"
+          ><strong class="label">Size:</strong>
+          <input
+            type="number"
+            formControlName="size"
+            class="form-control"
+            [(ngModel)]="tempSize"
+            (click)="setSize()"
+            placeholder="Enter size of {{ selected }}"
+          />
+        </label>
+        <!--- <div class="example-container" [ngStyle]="{ 'font-size': tempSize }">
+          Trial Size
+        </div>-->
+      </form>
+    </div>
+    <div class="Container-mini">
+      <form [formGroup]="customizeForm">
+        <label class="example-container"
+          ><strong class="label">MaxChar:</strong>
+          <input
+            type="number"
+            formControlName="maxChar"
+            class="form-control"
+            [(ngModel)]="maxLen"
+            (click)="setMaxchar()"
+          />
+        </label>
+      </form>
+    </div>
+
+    <div class="example-container">
+      <strong class="star"> * </strong>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="req"
+            value="true"
+            (click)="setrequired(true)"
+          />
+          Required
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="req"
+            value="false"
+            (click)="setrequired(false)"
+          />
+          Not-Required
+        </label>
+      </div>
+    </div>
+    <!-- <button
+      class="btn"
+      [disabled]="!customizeForm.valid"
+      (click)="setData(tempColor, tempSize, maxLen, label, formTextRequired)"
+    >
+      Save
+    </button-->
+
+    <div class="Container-mini">
+      <form [formGroup]="requesttypeform">
+        <label class="example-container"
+          ><strong class="label">RequestType:</strong>
+          <input
+            type="text"
+            formControlName="requesttype"
+            class="form-control"
+            [(ngModel)]="request"
+            placeholder=" {{ request }}"
+          />
+          <button
+            mat-raised-button
+            color="primary"
+            class="addButton"
+            [disabled]="!requesttypeform.valid"
+            (click)="addType(request)"
+          >
+            ADD
+          </button>
+        </label>
+      </form>
+    </div>
+  </div>
+
+  <div class="container2">
+    <app-user-form [updatenew]="updatenew"></app-user-form>
+  </div>
+</div>

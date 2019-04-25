@@ -1,0 +1,37 @@
+table,
+th,
+td {
+  padding: 0.7rem;
+  text-align: center;
+}
+
+th {
+  color: white;
+  background-color: #76b852;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+table {
+  width: 100%;
+}
+.spinner {
+  margin-left: 40%;
+  margin-top: 20%;
+}
+
+.search {
+  margin-left: 50rem;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
+  padding: 0rem;
+}
+.heading {
+  margin-left: 33%;
+  letter-spacing: 0.2rem;
+}

@@ -1,0 +1,139 @@
+body {
+  background: #353a40;
+}
+
+.type1 {
+  border-collapse: separate;
+  background: #fff;
+  margin-left: 18rem;
+  width: 50%;
+  margin-top: 1rem;
+}
+
+thead th {
+  font-family: "Patua One", cursive;
+  font-size: 18rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 1rem 1rem 0rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 26rem;
+  letter-spacing: 0.1rem;
+  background-size: 100%;
+  border-top: 1rem solid #858d99;
+}
+
+tbody tr td {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #5f6062;
+  font-size: 1rem;
+  padding: 1.2rem;
+  margin-left: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(2n) {
+  background: #f0f3f5;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1rem;
+}
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1rem;
+}
+
+.spinner {
+  margin-left: 40%;
+  margin-top: 20%;
+}
+.container2 {
+  margin-top: 3rem;
+  text-align: center;
+}
+.heading {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+.buttons {
+  width: 100%;
+  table-layout: fixed;
+}
+.buttons tr {
+  display: flex;
+}
+.buttons tr td {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  flex: 1;
+  color: white;
+  background: #76b852;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {
+  background: #434343;
+  letter-spacing: 0.2rem;
+  transition: all 0.4s ease 0s;
+}
+.sidehead {
+  padding-left: 2rem;
+  text-align: center;
+}
+
+.textbox {
+  width: 50%;
+  height: 10rem;
+  margin-left: 23%;
+  margin-top: 1rem;
+}
+mat-form-field {
+  margin-right: 12px;
+}
+.head {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 2rem;
+}
+.btn {
+  flex: 1;
+  color: white;
+  background: #76b852;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 2rem;
+  outline: none;
+}
+.btn:hover {
+  background: #434343;
+  transition: all 0.4s ease 0s;
+  letter-spacing: 0rem;
+}
+.btn2 {
+  margin-left: 35rem;
+}
+.btn2 button {
+  margin-right: 1rem;
+  color: white;
+  background: #76b852;
+}
+.content {
+  text-align: center;
+  align-content: center;
+}
+.donut {
+  width: 30%;
+  margin-left: 25rem;
+}

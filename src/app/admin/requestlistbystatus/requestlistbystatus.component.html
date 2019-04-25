@@ -1,0 +1,52 @@
+<div class="spinner" *ngIf="dataGetState">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!dataGetState" class="container" [ngSwitch]="status">
+  <br />
+  <h3 class="heading" *ngSwitchCase="1">NEW REQUEST LIST</h3>
+  <h3 class="heading" *ngSwitchCase="2">VERIFY REQUEST LIST</h3>
+  <h3 class="heading" *ngSwitchCase="3">IN-PROGRESS REQUEST LIST</h3>
+  <h3 class="heading" *ngSwitchCase="4">COMPLETED REQUEST LIST</h3>
+  <br />
+
+  <table>
+    <thead>
+      <th>Request ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone No</th>
+      <th>Request Type</th>
+      <th>Status</th>
+    </thead>
+    <tr
+      *ngFor="
+        let que of (queue | paginate: { itemsPerPage: 5, currentPage: page });
+        let i = index
+      "
+      [ngSwitch]="que.status"
+    >
+      <td>
+        <a routerLink="/admin/view/{{ que.request_id }}" routerLink="active">{{
+          que.request_id
+        }}</a>
+      </td>
+      <td>{{ que.firstname }}</td>
+      <td>{{ que.lastname }}</td>
+      <td>{{ que.email }}</td>
+      <td>{{ que.phone_no }}</td>
+      <td>{{ que.datareqlist }}</td>
+      <td class="column" *ngSwitchCase="1">NEW</td>
+      <td class="column" *ngSwitchCase="2">VERIFY</td>
+      <td class="column" *ngSwitchCase="3">IN-PROGRESS</td>
+      <td class="column" *ngSwitchCase="4">COMPLETED</td>
+    </tr>
+  </table>
+
+  <br />
+  <br />
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  <div>
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div>
+</div>

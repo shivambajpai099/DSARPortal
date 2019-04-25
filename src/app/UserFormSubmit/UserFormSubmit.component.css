@@ -1,0 +1,16 @@
+.success {
+  margin-top: 10rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.btn {
+  color: white;
+  background: #76b852;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-left: 35rem;
+  margin-top: 10rem;
+}

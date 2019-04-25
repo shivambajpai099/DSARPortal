@@ -1,0 +1,70 @@
+.parent {
+  display: flex;
+  align-content: space-around;
+}
+.container1 {
+  border: 0.2rem solid #dee2e6;
+  width: 20%;
+}
+
+.container-mini {
+  padding: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 2rem;
+}
+.container2 {
+  margin-left: 4.5%;
+  width: 67%;
+  border: 0.1rem solid #dee2e6;
+}
+.label {
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding-bottom: 0.2rem;
+}
+.example-container {
+  padding-top: 1rem;
+  padding-left: 2rem;
+  margin-left: 2rem;
+}
+.btn {
+  padding: 2rem;
+  margin: 2rem 5rem 2rem 5rem;
+  color: green;
+  width: 10rem;
+  color: #fff !important;
+  text-transform: uppercase;
+  background: #76b852;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+.btn:hover {
+  background: #434343;
+  letter-spacing: 0.5rem;
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+button[disabled] {
+  border: 0.2rem solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.reqtype {
+  margin-top: 2rem;
+}
+.star {
+  color: red;
+}
+
+.addButton {
+  align-self: flex-end;
+  margin-left: 5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: #76b852;
+}

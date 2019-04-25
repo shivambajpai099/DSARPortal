@@ -1,0 +1,31 @@
+.img {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.firstButton {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.basicButton {
+  padding: 2rem;
+  margin: 2rem;
+  color: #76b852;
+  width: 15rem;
+  color: #fff !important;
+  text-transform: uppercase;
+  background: #76b852;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.basicButton:hover {
+  background: #434343;
+  letter-spacing: 0.5rem;
+  transition: all 0.4s ease 0s;
+}
